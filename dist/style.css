@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Questrial&display=swap");
+
+:root {
+  --body-bg: #0f172a;
+  --head-bg: #0369a1;
+  --head-text: #fafafa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body-bg);
+}
+
+#content {
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Indie Flower", cursive;
+  font-size: 1.5rem;
+  background-color: var(--head-bg);
+  color: var(--head-text);
+  height: 80px;
+  width: 100%;
+}
+
+.buttonGroup {
+  justify-self: flex-end;
+}
+
+/* home page styles */
+.home {
+  display: flex;
+  box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.15);
+  width: 800px;
+  border-radius: 5px;
+  color: var(--head-text);
+}
+
+.home img {
+  width: 350px;
+  height: auto;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  object-fit: cover;
+}
+
+.homeTexts {
+  font-family: "Questrial", sans-serif;
+  line-height: 1.5;
+  padding: 15px 25px;
+}
+
+.homeTexts h2 {
+  text-align: center;
+  border-bottom: 1px solid var(--head-text);
+  margin-bottom: 12px;
+}

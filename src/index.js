@@ -1,1 +1,3 @@
-console.log("henlo!");
+import loadHome from "./home";
+
+loadHome();
