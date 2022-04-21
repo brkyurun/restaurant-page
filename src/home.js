@@ -43,6 +43,7 @@ function createText(type, text) {
 
 function loadHome() {
   const container = document.getElementById("content");
+  container.innerHTML = "";
   container.appendChild(createHomeCard());
   return container;
 }

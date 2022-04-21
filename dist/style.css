@@ -1,9 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Questrial&family=Roboto:wght@400;500&display=swap");
 
 :root {
   --body-bg: #0f172a;
   --head-bg: #0369a1;
   --head-text: #fafafa;
+  --btn-home-active: #4ade80;
+  --btn-menu-active: #facc15;
+  --btn-contact-active: #22d3ee;
+
+  --card-bg: #f1f5f9;
+  --card-text: #0f172a;
+  --card-border: rgba(148, 163, 184, 0.4);
 }
 
 * {
@@ -17,7 +24,7 @@ body {
 }
 
 #content {
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +32,8 @@ body {
 
 .head {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 40px;
   align-items: center;
   font-family: "Indie Flower", cursive;
   font-size: 1.5rem;
@@ -36,7 +44,48 @@ body {
 }
 
 .buttonGroup {
-  justify-self: flex-end;
+  display: flex;
+  gap: 20px;
+}
+
+.navButton {
+  font-family: "Indie Flower", cursive;
+  font-size: 1.3rem;
+  padding: 10px 35px;
+  border: none;
+  border-bottom: 2px solid var(--head-text);
+  outline: none;
+  color: var(--head-text);
+  background: none;
+  transition: all ease-out 0.3s;
+}
+
+.navButton:hover {
+  border-bottom: 2px solid var(--btn-home-active);
+  color: var(--btn-home-active);
+  transform: scale(1.04);
+}
+
+.navButton:hover:nth-child(2) {
+  border-bottom: 2px solid var(--btn-menu-active);
+  color: var(--btn-menu-active);
+}
+
+.navButton:hover:last-child {
+  border-bottom: 2px solid var(--btn-contact-active);
+  color: var(--btn-contact-active);
+}
+
+.active:first-child {
+  border-bottom: 2px solid var(--btn-home-active);
+}
+
+.active:nth-child(2) {
+  border-bottom: 2px solid var(--btn-menu-active);
+}
+
+.active:last-child {
+  border-bottom: 2px solid var(--btn-contact-active);
 }
 
 /* home page styles */
@@ -67,4 +116,73 @@ body {
   text-align: center;
   border-bottom: 1px solid var(--head-text);
   margin-bottom: 12px;
+}
+
+/* menu styles */
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: center;
+  justify-items: center;
+  gap: 20px 10px;
+  height: inherit;
+  width: 100vw;
+  padding: 20px 50px;
+  margin: 20px auto 20px auto;
+}
+
+.card {
+  border: 5px solid var(--card-border);
+  border-radius: 8px;
+  width: 320px;
+  height: 430px;
+  overflow: hidden;
+  background-color: var(--card-bg);
+  color: var(--card-text);
+}
+
+.card img {
+  position: relative;
+  left: -10px;
+  width: 320px;
+  height: auto;
+}
+
+.textGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  align-items: center;
+  row-gap: 5px;
+  height: calc(420px - 175px);
+  padding: 15px 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.cardTitle {
+  grid-row: 1;
+  grid-column: span 2;
+  font-size: 1.3rem;
+}
+
+.cardDescription {
+  grid-row: 2;
+  grid-column: span 2;
+  align-self: stretch;
+}
+
+.cardPrice {
+  grid-row: 3;
+  grid-column: 2;
+  justify-self: end;
+}
+
+.menuTitle {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  padding-top: 30px;
 }

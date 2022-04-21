@@ -1,3 +1,3 @@
-import loadHome from "./home";
+import loadApp from "./appCreate";
 
-loadHome();
+loadApp();
