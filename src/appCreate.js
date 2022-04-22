@@ -1,5 +1,7 @@
 import loadHome from "./home";
 import loadMenu from "./menu";
+import loadContact from "./contact";
+import createFooter from "./footer";
 
 function createButtonGroup() {
   const buttonContainer = document.createElement("div");
@@ -29,6 +31,14 @@ function createButtonGroup() {
     }
     setActive(menu);
     loadMenu();
+  });
+
+  contact.addEventListener("click", (e) => {
+    if (e.target.classList.contains("active")) {
+      return;
+    }
+    setActive(contact);
+    loadContact();
   });
 
   for (let button of buttons) {
@@ -67,6 +77,7 @@ function loadApp() {
   const html = document.querySelector("html");
   const body = document.querySelector("body");
   html.insertBefore(createHeader(), body);
+  html.appendChild(createFooter());
   loadHome();
 }
 
